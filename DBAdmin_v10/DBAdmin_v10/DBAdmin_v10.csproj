@@ -60,7 +60,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IAppView.cs" />
+    <Compile Include="IChangeInfoScreen.cs" />
     <Compile Include="IDB_Model.cs" />
+    <Compile Include="IDeleteScreen.cs" />
+    <Compile Include="IInsertScreen.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
