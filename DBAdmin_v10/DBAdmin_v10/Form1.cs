@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DBAdmin_v10
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IAppView
     {
         public Form1()
         {
