@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace DBAdmin_v10
 {
-    public interface IAppView
+    public class DeleteUserPresenter
     {
+        IDeleteScreen _deleteScreen;
 
+        public void CreateUserFromDeleteScreen()
+        {
+
+        }
     }
 }

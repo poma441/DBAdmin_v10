@@ -34,13 +34,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPatronymic = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -51,6 +50,7 @@
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblmsg = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -106,69 +106,59 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Patronymic";
             // 
-            // label6
+            // txtLogin
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(268, 580);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Position";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.txtLogin.Location = new System.Drawing.Point(470, 114);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(194, 26);
+            this.txtLogin.TabIndex = 6;
+            this.txtLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtLogin.Leave += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(470, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 26);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPassword.Location = new System.Drawing.Point(470, 196);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(194, 26);
+            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtPassword.Leave += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox2
+            // txtSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(470, 196);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 26);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSurname.Location = new System.Drawing.Point(470, 290);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(194, 26);
+            this.txtSurname.TabIndex = 8;
+            this.txtSurname.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtSurname.Leave += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox3
+            // txtName
             // 
-            this.textBox3.Location = new System.Drawing.Point(470, 290);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 26);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            this.textBox3.Leave += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtName.Location = new System.Drawing.Point(470, 374);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(194, 26);
+            this.txtName.TabIndex = 9;
+            this.txtName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtName.Leave += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox4
+            // txtPatronymic
             // 
-            this.textBox4.Location = new System.Drawing.Point(470, 374);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(194, 26);
-            this.textBox4.TabIndex = 9;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            this.textBox4.Leave += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtPatronymic.Location = new System.Drawing.Point(470, 470);
+            this.txtPatronymic.Name = "txtPatronymic";
+            this.txtPatronymic.Size = new System.Drawing.Size(194, 26);
+            this.txtPatronymic.TabIndex = 10;
+            this.txtPatronymic.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtPatronymic.Leave += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox5
+            // txtPosition
             // 
-            this.textBox5.Location = new System.Drawing.Point(470, 470);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(194, 26);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            this.textBox5.Leave += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(470, 574);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(194, 26);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            this.textBox6.Leave += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtPosition.Location = new System.Drawing.Point(470, 574);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(194, 26);
+            this.txtPosition.TabIndex = 11;
+            this.txtPosition.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtPosition.Leave += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // errorProvider1
             // 
@@ -219,21 +209,31 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "INSERT";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(291, 577);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Position";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1630, 1068);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblmsg);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.txtPatronymic);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtSurname);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -261,13 +261,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtPatronymic;
+        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
@@ -278,5 +277,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.Label lblmsg;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
     }
 }

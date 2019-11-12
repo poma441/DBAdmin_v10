@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 namespace DBAdmin_v10
 {
-    public partial class Form2 : Form
+    public partial class Form2 : Form, IInsertScreen
     {
         public Form2()
         {
@@ -23,18 +23,19 @@ namespace DBAdmin_v10
         string pattern1 = "^[А-ЯЁ][а-яё]+$";
         string pattern2 = "^[A-Za-z]+$";
 
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+        public string LoginText { get { return txtLogin.Text; } set => txtLogin.Text = value; }
+        public string PasswordText { get { return txtPassword.Text; } set => txtPassword.Text = value; }
+        public string SurnameText { get { return txtSurname.Text; } set => txtSurname.Text = value; }
+        public string NameText { get { return txtName.Text; } set => txtName.Text = value; }
+        public string PatronymicText { get { return txtPatronymic.Text; } set => txtPatronymic.Text = value; }
+        public string PositionText { get { return txtPosition.Text; } set => txtPosition.Text = value; }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox2.Text, pattern) == false && textBox2.Text.Length <= 3 && textBox2.Text.Length > 0)
+            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length <= 3 && txtPassword.Text.Length > 0)
             {
-                textBox2.Focus();
-                errorProvider1.SetError(this.textBox2, "Пароль должен содержать минимум 1 букву 1 цифру специальный символ и еще че-то");
+                txtPassword.Focus();
+                errorProvider1.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру ");
                 lblmsg.ForeColor = System.Drawing.Color.Red;
                 lblmsg.Text = "Слишком легкий пароль ";
             }
@@ -42,10 +43,10 @@ namespace DBAdmin_v10
             {
                 errorProvider1.Clear();
             }
-            if (Regex.IsMatch(textBox2.Text, pattern) == false && textBox2.Text.Length <= 6 && textBox2.Text.Length > 3)
+            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length <= 6 && txtPassword.Text.Length > 3)
             {
-                textBox2.Focus();
-                errorProvider2.SetError(this.textBox2, "Пароль должен содержать минимум 1 букву, 1 цифру и 1 специальный символ");
+                txtPassword.Focus();
+                errorProvider2.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру");
                 lblmsg.ForeColor = System.Drawing.Color.Yellow;
                 lblmsg.Text = "Средний пароль ";
             }
@@ -53,10 +54,10 @@ namespace DBAdmin_v10
             {
                 errorProvider2.Clear();
             }
-            if (Regex.IsMatch(textBox2.Text, pattern) == false && textBox2.Text.Length > 6)
+            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length > 6)
             {
-                textBox2.Focus();
-                errorProvider3.SetError(this.textBox2, "Пароль должен содержать минимум 1 букву, 1 цифру и 1 специальный символ");
+                txtPassword.Focus();
+                errorProvider3.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру");
                 lblmsg.ForeColor = System.Drawing.Color.Green;
                 lblmsg.Text = "Надежный пароль ";
             }
@@ -68,10 +69,10 @@ namespace DBAdmin_v10
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox1.Text, pattern2) == false)
+            if (Regex.IsMatch(txtLogin.Text, pattern2) == false)
             {
-                textBox1.Focus();
-                errorProvider4.SetError(this.textBox1, "онли инглиш леттерс");
+                txtLogin.Focus();
+                errorProvider4.SetError(this.txtLogin, "онли инглиш леттерс");
             }
             else
             {
@@ -81,10 +82,10 @@ namespace DBAdmin_v10
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox4.Text, pattern1) == false)
+            if (Regex.IsMatch(txtName.Text, pattern1) == false)
             {
-                textBox4.Focus();
-                errorProvider5.SetError(this.textBox4, "Имя с большой буквы");
+                txtName.Focus();
+                errorProvider5.SetError(this.txtName, "Имя с большой буквы");
             }
             else
             {
@@ -95,10 +96,10 @@ namespace DBAdmin_v10
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox3.Text, pattern1) == false)
+            if (Regex.IsMatch(txtSurname.Text, pattern1) == false)
             {
-                textBox3.Focus();
-                errorProvider6.SetError(this.textBox3, "Фамилия с большой буквы");
+                txtSurname.Focus();
+                errorProvider6.SetError(this.txtSurname, "Фамилия с большой буквы");
             }
             else
             {
@@ -108,12 +109,12 @@ namespace DBAdmin_v10
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            if (textBox5.Text.Length > 0)
+            if (txtPatronymic.Text.Length > 0)
             {
-                if (Regex.IsMatch(textBox5.Text, pattern1) == false)
+                if (Regex.IsMatch(txtPatronymic.Text, pattern1) == false)
                 {
-                    textBox5.Focus();
-                    errorProvider7.SetError(this.textBox5, "Отчество с большой буквы");
+                    txtPatronymic.Focus();
+                    errorProvider7.SetError(this.txtPatronymic, "Отчество с большой буквы");
                 }
                 else
                 {
@@ -124,14 +125,21 @@ namespace DBAdmin_v10
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (textBox6.Text.Length == 0)
+            if (txtPosition.Text.Length == 0)
             {
-                errorProvider8.SetError(this.textBox6, "Поле не может быть пустым");
+                errorProvider8.SetError(this.txtPosition, "Поле не может быть пустым");
             }
             else
             {
                 errorProvider8.Clear();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            InsertUserPresenter insertUserPresenter = new InsertUserPresenter(this);
+            insertUserPresenter.InsertUserToDB();
         }
     }
 }

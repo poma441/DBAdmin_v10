@@ -31,6 +31,10 @@ namespace DBAdmin_v10
             button1.ShowDialog();
         }
 
-     
+        private void button3_Click(object sender, EventArgs e)
+        {
+            db = new DataClasses1DataContext();
+            dataGridView1.DataSource = db.Users;
+        }
     }
 }

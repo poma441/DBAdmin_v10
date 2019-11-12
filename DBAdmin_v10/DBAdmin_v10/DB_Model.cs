@@ -9,7 +9,7 @@ namespace DBAdmin_v10
 {
     public class DB_Model
     {
-        private static DataClasses1DataContext db;
+        public static DataClasses1DataContext db;
 
         public static string GetMd5Code(string oldpasswd)
         {

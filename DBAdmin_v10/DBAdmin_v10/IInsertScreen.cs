@@ -8,11 +8,13 @@ namespace DBAdmin_v10
 {
     public interface IInsertScreen
     {
-        string Login();
-        string Password();
-        string Name();
-        string Surname();
-        string Patronymic();
-        string Position();
+        string LoginText { get; set; }
+        string PasswordText { get; set; }
+        string SurnameText { get; set; } 
+        string NameText { get; set; }
+        string PatronymicText { get; set; }
+        string PositionText { get; set; }
+
+
     }
 }
