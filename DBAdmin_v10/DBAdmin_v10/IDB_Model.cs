@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DBAdmin_v10
 {
-    interface IDB_Model
+    public interface IDB_Model
     {
+        string GetMd5Code(string oldpasswd);
+        void DataChange(Users olduser, Users newuser);
+        bool Insert(Users olduser);
+        bool Update(Users olduser);
+        void Delete(Users olduser);
     }
 }
