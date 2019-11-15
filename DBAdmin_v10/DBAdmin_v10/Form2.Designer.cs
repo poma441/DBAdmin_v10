@@ -48,9 +48,9 @@
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblmsg = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblmsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -192,18 +192,9 @@
             // 
             this.errorProvider8.ContainerControl = this;
             // 
-            // lblmsg
-            // 
-            this.lblmsg.AutoSize = true;
-            this.lblmsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblmsg.Location = new System.Drawing.Point(797, 186);
-            this.lblmsg.Name = "lblmsg";
-            this.lblmsg.Size = new System.Drawing.Size(0, 36);
-            this.lblmsg.TabIndex = 13;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(856, 674);
+            this.button1.Location = new System.Drawing.Point(400, 712);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(322, 168);
             this.button1.TabIndex = 14;
@@ -220,11 +211,20 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Position";
             // 
+            // lblmsg
+            // 
+            this.lblmsg.AutoSize = true;
+            this.lblmsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblmsg.Location = new System.Drawing.Point(797, 186);
+            this.lblmsg.Name = "lblmsg";
+            this.lblmsg.Size = new System.Drawing.Size(0, 36);
+            this.lblmsg.TabIndex = 13;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1630, 1068);
+            this.ClientSize = new System.Drawing.Size(1146, 1004);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblmsg);
@@ -275,8 +275,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider6;
         private System.Windows.Forms.ErrorProvider errorProvider7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
-        private System.Windows.Forms.Label lblmsg;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblmsg;
     }
 }

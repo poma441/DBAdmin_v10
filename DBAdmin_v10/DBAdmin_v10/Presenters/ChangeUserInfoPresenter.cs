@@ -10,7 +10,10 @@ namespace DBAdmin_v10
     {
         IChangeInfoScreen _changeInfoScreen;
 
-
+        public ChangeUserInfoPresenter(IChangeInfoScreen changeInfoScreen)
+        {
+            _changeInfoScreen = changeInfoScreen;
+        }
 
         public Users CreateUserFromChangeInfoScreen()
         {
@@ -22,6 +25,13 @@ namespace DBAdmin_v10
             user.patronymic = _changeInfoScreen.PatronymicText;
             user.position = _changeInfoScreen.PositionText;
             return user;
+        }
+
+        public bool ChangeUserInfoInDB()
+        {
+            Users user = CreateUserFromChangeInfoScreen();
+            return DB_Model.Update(user);
+       
         }
     }
 }

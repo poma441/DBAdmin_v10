@@ -47,14 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeUserInfoPresenter.cs" />
+    <Compile Include="Presenters\ChangeUserInfoPresenter.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="DB_Model.cs" />
-    <Compile Include="DeleteUserPresenter.cs" />
+    <Compile Include="Presenters\DeleteUserPresenter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +68,10 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="IAppView.cs" />
-    <Compile Include="IChangeInfoScreen.cs" />
+    <Compile Include="IViews\IChangeInfoScreen.cs" />
     <Compile Include="IDB_Model.cs" />
-    <Compile Include="IDeleteScreen.cs" />
-    <Compile Include="IInsertScreen.cs" />
-    <Compile Include="InsertUserPresenter.cs" />
+    <Compile Include="IViews\IInsertScreen.cs" />
+    <Compile Include="Presenters\InsertUserPresenter.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

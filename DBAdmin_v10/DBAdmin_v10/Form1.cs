@@ -36,5 +36,26 @@ namespace DBAdmin_v10
             db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            /*Form3 changeInfoScreen = new Form3();
+            changeInfoScreen.txtLogin.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            changeInfoScreen.txtPassword.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            changeInfoScreen.txtSurname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            changeInfoScreen.txtName.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            changeInfoScreen.txtPatronymic.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            changeInfoScreen.txtPosition.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            changeInfoScreen.ShowDialog();*/
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            DeleteUserPresenter presenter = new DeleteUserPresenter();
+            presenter.DeleteUserFromDB(id);
+            db = new DataClasses1DataContext();
+            dataGridView1.DataSource = db.Users;
+        }
     }
 }

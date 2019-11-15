@@ -27,12 +27,10 @@ namespace DBAdmin_v10
             return user;
         }
 
-        public void InsertUserToDB()
+        public bool InsertUserToDB()
         {
             Users user = CreateUserFromInsertScreen();
-            DB_Model.Insert(user);
+            return DB_Model.Insert(user);
         }
-
-
     }
 }

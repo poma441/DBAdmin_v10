@@ -78,11 +78,11 @@ namespace DBAdmin_v10
             }
         }
 
-        public static void Delete(Users olduser)
+        public static void Delete(int id)
         {
             db = new DataClasses1DataContext();
 
-            var newuser = db.Users.Where(w => w.id == olduser.id).FirstOrDefault();
+            var newuser = db.Users.Where(w => w.id == id).FirstOrDefault();
 
             db.Users.DeleteOnSubmit(newuser);
             db.SubmitChanges();

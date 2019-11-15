@@ -8,11 +8,9 @@ namespace DBAdmin_v10
 {
     public class DeleteUserPresenter
     {
-        IDeleteScreen _deleteScreen;
-
-        public void CreateUserFromDeleteScreen()
+        public void DeleteUserFromDB(int id)
         {
-
+            DB_Model.Delete(id);
         }
     }
 }

@@ -14,7 +14,5 @@ namespace DBAdmin_v10
         string NameText { get; set; }
         string PatronymicText { get; set; }
         string PositionText { get; set; }
-
-
     }
 }
