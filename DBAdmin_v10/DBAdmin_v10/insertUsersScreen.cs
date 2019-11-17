@@ -142,9 +142,17 @@ namespace DBAdmin_v10
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            this.Close();
             InsertUserPresenter insertUserPresenter = new InsertUserPresenter(this);
-            insertUserPresenter.InsertUserToDB();
+
+            if (insertUserPresenter.InsertUserToDB())
+            {
+                MessageBox.Show("Пользователь успешно добавлен", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Не удалось добавить пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
         }
 
     }

@@ -32,7 +32,6 @@ namespace DBAdmin_v10
         {
             Users user = CreateUserFromChangeInfoScreen();
             return DB_Model.Update(user);
-       
         }
     }
 }

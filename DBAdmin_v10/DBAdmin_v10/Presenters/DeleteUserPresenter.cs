@@ -8,9 +8,9 @@ namespace DBAdmin_v10
 {
     public class DeleteUserPresenter
     {
-        public void DeleteUserFromDB(int id)
+        public bool DeleteUserFromDB(List<int> id)
         {
-            DB_Model.Delete(id);
+            return DB_Model.Delete(id);
         }
     }
 }

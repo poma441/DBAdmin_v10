@@ -78,14 +78,27 @@ namespace DBAdmin_v10
             }
         }
 
-        public static void Delete(int id)
+        public static bool Delete(List<int> userlist)
         {
             db = new DataClasses1DataContext();
+            List<Users> deleteusers = new List<Users>();
 
-            var newuser = db.Users.Where(w => w.id == id).FirstOrDefault();
+            for (int i = 0; i < userlist.Count(); ++i)
+            {
+                var newuser = db.Users.Where(w => w.id == userlist[i]).FirstOrDefault();
+                deleteusers.Add(newuser);
+                db.Users.DeleteOnSubmit(deleteusers[i]);
+            }
 
-            db.Users.DeleteOnSubmit(newuser);
-            db.SubmitChanges();
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
