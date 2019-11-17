@@ -9,19 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-
 namespace DBAdmin_v10
 {
-    public partial class Form2 : Form, IInsertScreen
+    public partial class ChangeUsersScreen : Form
     {
-        public Form2()
+        public ChangeUsersScreen()
         {
             InitializeComponent();
         }
 
-        string pattern = @"(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+        private void ChangeUsersScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+        string pattern0 = @"(?=^.{3,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
+        //string pattern = @"(?=^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
         string pattern1 = "^[А-ЯЁ][а-яё]+$";
-        string pattern2 = "^[A-Za-z]+$";
+        string pattern2 = "^(?=^.{4,}$)[A-Za-z]+$";
 
         public string LoginText { get { return txtLogin.Text; } set => txtLogin.Text = value; }
         public string PasswordText { get { return txtPassword.Text; } set => txtPassword.Text = value; }
@@ -30,49 +34,54 @@ namespace DBAdmin_v10
         public string PatronymicText { get { return txtPatronymic.Text; } set => txtPatronymic.Text = value; }
         public string PositionText { get { return txtPosition.Text; } set => txtPosition.Text = value; }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length <= 3 && txtPassword.Text.Length > 0)
+            if (Regex.IsMatch(txtPassword.Text, pattern0) == false || txtPassword.Text.Length == 0)
             {
                 txtPassword.Focus();
                 errorProvider1.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру ");
-                lblmsg.ForeColor = System.Drawing.Color.Red;
-                lblmsg.Text = "Слишком легкий пароль ";
+
             }
             else
             {
-                errorProvider1.Clear();
+                if ((txtPassword.Text.Length < 5 && txtPassword.Text.Length > 0) || txtPassword.Text.Length == 0)
+                {
+
+                    txtPassword.Focus();
+                    errorProvider1.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру ");
+                    lblmsg.ForeColor = System.Drawing.Color.Red;
+                    lblmsg.Text = "Слишком легкий пароль ";
+                }
+                else
+                {
+                    errorProvider1.Clear();
+
+                }
+                if (txtPassword.Text.Length >= 5 && txtPassword.Text.Length < 9)
+                {
+                    lblmsg.ForeColor = System.Drawing.Color.Yellow;
+                    lblmsg.Text = "Средний пароль ";
+
+                }
+
+
+                if (txtPassword.Text.Length >= 9)
+                {
+                    lblmsg.ForeColor = System.Drawing.Color.Green;
+                    lblmsg.Text = "Надежный пароль ";
+
+                }
+
             }
-            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length <= 6 && txtPassword.Text.Length > 3)
-            {
-                txtPassword.Focus();
-                errorProvider2.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру");
-                lblmsg.ForeColor = System.Drawing.Color.Yellow;
-                lblmsg.Text = "Средний пароль ";
-            }
-            else
-            {
-                errorProvider2.Clear();
-            }
-            if (Regex.IsMatch(txtPassword.Text, pattern) == false && txtPassword.Text.Length > 6)
-            {
-                txtPassword.Focus();
-                errorProvider3.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру");
-                lblmsg.ForeColor = System.Drawing.Color.Green;
-                lblmsg.Text = "Надежный пароль ";
-            }
-            else
-            {
-                errorProvider3.Clear();
-            }
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtLogin_TextChanged(object sender, EventArgs e)
         {
             if (Regex.IsMatch(txtLogin.Text, pattern2) == false)
             {
                 txtLogin.Focus();
-                errorProvider4.SetError(this.txtLogin, "онли инглиш леттерс");
+                errorProvider4.SetError(this.txtLogin, "При создании логина использовать только английский алфавит и логин содержит минимум 4 буквы");
             }
             else
             {
@@ -80,7 +89,7 @@ namespace DBAdmin_v10
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
             if (Regex.IsMatch(txtName.Text, pattern1) == false)
             {
@@ -94,7 +103,7 @@ namespace DBAdmin_v10
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void txtSurname_TextChanged(object sender, EventArgs e)
         {
             if (Regex.IsMatch(txtSurname.Text, pattern1) == false)
             {
@@ -107,7 +116,7 @@ namespace DBAdmin_v10
             }
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void txtPatronymic_TextChanged(object sender, EventArgs e)
         {
             if (txtPatronymic.Text.Length > 0)
             {
@@ -123,7 +132,7 @@ namespace DBAdmin_v10
             }
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void txtPosition_TextChanged(object sender, EventArgs e)
         {
             if (txtPosition.Text.Length == 0)
             {
@@ -135,11 +144,12 @@ namespace DBAdmin_v10
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonChange_Click(object sender, EventArgs e)
         {
-            this.Close();
-            InsertUserPresenter insertUserPresenter = new InsertUserPresenter(this);
-            insertUserPresenter.InsertUserToDB();
+            //this.Close();
+            //ChangeUserInfoPresenter changeUserPresenter = new ChangeUserInfoPresenter(this);
+            //insertUserPresenter.InsertUserToDB();
         }
+
     }
 }
