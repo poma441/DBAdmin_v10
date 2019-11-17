@@ -43,17 +43,15 @@ namespace DBAdmin_v10
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-
-            Form button1 = new ChangeUsersScreen();
-            button1.ShowDialog();
-            /*Form3 changeInfoScreen = new Form3();
+            ChangeUsersScreen changeInfoScreen = new ChangeUsersScreen();
             changeInfoScreen.txtLogin.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             changeInfoScreen.txtPassword.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             changeInfoScreen.txtSurname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             changeInfoScreen.txtName.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             changeInfoScreen.txtPatronymic.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             changeInfoScreen.txtPosition.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            changeInfoScreen.ShowDialog();*/
+            changeInfoScreen.txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            changeInfoScreen.ShowDialog();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -85,6 +83,11 @@ namespace DBAdmin_v10
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Check;
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            buttonChange_Click(this, null);
         }
     }
 }

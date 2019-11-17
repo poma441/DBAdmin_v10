@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace DBAdmin_v10
 {
-    public partial class ChangeUsersScreen : Form
+    public partial class ChangeUsersScreen : Form, IChangeInfoScreen
     {
         public ChangeUsersScreen()
         {
@@ -33,6 +33,7 @@ namespace DBAdmin_v10
         public string NameText { get { return txtName.Text; } set => txtName.Text = value; }
         public string PatronymicText { get { return txtPatronymic.Text; } set => txtPatronymic.Text = value; }
         public string PositionText { get { return txtPosition.Text; } set => txtPosition.Text = value; }
+        public string IDText { get { return txtID.Text; } set => txtID.Text = value; }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
@@ -144,12 +145,14 @@ namespace DBAdmin_v10
             }
         }
 
-        private void buttonChange_Click(object sender, EventArgs e)
+        private void buttonChangeUsrInfo_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //ChangeUserInfoPresenter changeUserPresenter = new ChangeUserInfoPresenter(this);
-            //insertUserPresenter.InsertUserToDB();
+            ChangeUserInfoPresenter changeUserPresenter = new ChangeUserInfoPresenter(this);
+            if (changeUserPresenter.ChangeUserInfoInDB())
+            {
+                MessageBox.Show("Информация о пользователе успешно изменена!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
-
     }
 }

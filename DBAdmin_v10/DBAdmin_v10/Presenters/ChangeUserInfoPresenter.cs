@@ -18,6 +18,7 @@ namespace DBAdmin_v10
         public Users CreateUserFromChangeInfoScreen()
         {
             Users user = new Users();
+            user.id = Convert.ToInt32(_changeInfoScreen.IDText);
             user.login = _changeInfoScreen.LoginText;
             user.password = _changeInfoScreen.PasswordText;
             user.surname = _changeInfoScreen.SurnameText;

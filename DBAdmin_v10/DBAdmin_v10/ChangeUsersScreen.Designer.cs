@@ -41,7 +41,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPatronymic = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
-            this.buttonChange = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -51,6 +50,8 @@
             this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblmsg = new System.Windows.Forms.Label();
+            this.buttonChangeUsrInfo = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
@@ -169,15 +170,6 @@
             this.txtPosition.TextChanged += new System.EventHandler(this.txtPosition_TextChanged);
             this.txtPosition.Leave += new System.EventHandler(this.txtPosition_TextChanged);
             // 
-            // buttonChange
-            // 
-            this.buttonChange.Location = new System.Drawing.Point(434, 741);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(322, 168);
-            this.buttonChange.TabIndex = 23;
-            this.buttonChange.Text = "CHANGE";
-            this.buttonChange.UseVisualStyleBackColor = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -219,13 +211,32 @@
             this.lblmsg.Size = new System.Drawing.Size(0, 36);
             this.lblmsg.TabIndex = 24;
             // 
+            // buttonChangeUsrInfo
+            // 
+            this.buttonChangeUsrInfo.Location = new System.Drawing.Point(470, 772);
+            this.buttonChangeUsrInfo.Name = "buttonChangeUsrInfo";
+            this.buttonChangeUsrInfo.Size = new System.Drawing.Size(288, 134);
+            this.buttonChangeUsrInfo.TabIndex = 25;
+            this.buttonChangeUsrInfo.Text = "CHANGE";
+            this.buttonChangeUsrInfo.UseVisualStyleBackColor = true;
+            this.buttonChangeUsrInfo.Click += new System.EventHandler(this.buttonChangeUsrInfo_Click);
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(552, 52);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(16, 26);
+            this.txtID.TabIndex = 26;
+            this.txtID.Visible = false;
+            // 
             // ChangeUsersScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 1010);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.buttonChangeUsrInfo);
             this.Controls.Add(this.lblmsg);
-            this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtPatronymic);
             this.Controls.Add(this.txtName);
@@ -262,13 +273,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPatronymic;
-        private System.Windows.Forms.TextBox txtPosition;
-        private System.Windows.Forms.Button buttonChange;
+        public System.Windows.Forms.TextBox txtLogin;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.TextBox txtSurname;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtPatronymic;
+        public System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
@@ -278,5 +288,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.Label lblmsg;
+        private System.Windows.Forms.Button buttonChangeUsrInfo;
+        public System.Windows.Forms.TextBox txtID;
     }
 }
