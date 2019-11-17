@@ -23,7 +23,7 @@ namespace DBAdmin_v10
 
         DataClasses1DataContext db;
 
-        private void MainScreen_Load(object sender, EventArgs e)
+        public void MainScreen_Load(object sender, EventArgs e)
         {
             db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
@@ -33,12 +33,6 @@ namespace DBAdmin_v10
         {
             Form button1 = new insertUsersScreen();
             button1.ShowDialog();
-        }
-
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            db = new DataClasses1DataContext();
-            dataGridView1.DataSource = db.Users;
         }
 
         private void buttonChange_Click(object sender, EventArgs e)

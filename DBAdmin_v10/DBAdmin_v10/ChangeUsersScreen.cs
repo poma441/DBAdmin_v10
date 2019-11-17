@@ -153,6 +153,8 @@ namespace DBAdmin_v10
                 MessageBox.Show("Информация о пользователе успешно изменена!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+            else
+                MessageBox.Show("Не удалось изменить информацию о пользователе(логин уже существует)", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

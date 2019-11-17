@@ -35,6 +35,7 @@ namespace DBAdmin_v10
         {
             if (Regex.IsMatch(txtPassword.Text, pattern0) == false || txtPassword.Text.Length == 0)
             {
+                txtPassword.Focus();
                 errorProvider1.SetError(this.txtPassword, "Пароль должен содержать минимум 1 заглавную букву и 1 цифру ");
 
             }
@@ -151,7 +152,7 @@ namespace DBAdmin_v10
             }
             else
             {
-                MessageBox.Show("Не удалось добавить пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось добавить пользователя(логин уже существует)", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             };
         }
 
