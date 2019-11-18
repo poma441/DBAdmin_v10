@@ -13,9 +13,17 @@ namespace DBAdmin_v10
 {
     public partial class ChangeUsersScreen : Form, IChangeInfoScreen
     {
+        private MainScreen mainS;
+
         public ChangeUsersScreen()
         {
             InitializeComponent();
+        }
+
+        public ChangeUsersScreen(MainScreen f)
+        {
+            InitializeComponent();
+            mainS = f;
         }
 
         private void ChangeUsersScreen_Load(object sender, EventArgs e)
@@ -152,6 +160,7 @@ namespace DBAdmin_v10
             {
                 MessageBox.Show("Информация о пользователе успешно изменена!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                mainS.MainScreen_Load(sender, e);
             }
             else
                 MessageBox.Show("Не удалось изменить информацию о пользователе(логин уже существует)", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);

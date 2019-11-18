@@ -14,9 +14,17 @@ namespace DBAdmin_v10
 {
     public partial class insertUsersScreen : Form, IInsertScreen
     {
+        private MainScreen mainS;
+
         public insertUsersScreen()
         {
             InitializeComponent();
+        }
+
+        public insertUsersScreen(MainScreen f)
+        {
+            InitializeComponent();
+            mainS = f;
         }
 
         string pattern0 = @"(?=^.{3,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
@@ -149,6 +157,7 @@ namespace DBAdmin_v10
             {
                 MessageBox.Show("Пользователь успешно добавлен", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
+                mainS.MainScreen_Load(sender, e);
             }
             else
             {

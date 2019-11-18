@@ -31,13 +31,13 @@ namespace DBAdmin_v10
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            Form button1 = new insertUsersScreen();
+            insertUsersScreen button1 = new insertUsersScreen(this);
             button1.ShowDialog();
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            ChangeUsersScreen changeInfoScreen = new ChangeUsersScreen();
+            ChangeUsersScreen changeInfoScreen = new ChangeUsersScreen(this);
             changeInfoScreen.txtLogin.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             changeInfoScreen.txtPassword.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             changeInfoScreen.txtSurname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
