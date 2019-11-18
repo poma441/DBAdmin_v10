@@ -23,10 +23,24 @@ namespace DBAdmin_v10
 
         DataClasses1DataContext db;
 
+        public void DesignOfDataGridView(System.Windows.Forms.DataGridView dataGridView1)
+        {
+            dataGridView1.Columns[2].Width = 235;
+            dataGridView1.Columns[1].Width = 250;
+            dataGridView1.Columns[7].Width = 200;
+            dataGridView1.Columns[5].Width = 125;
+            dataGridView1.Columns[4].Width = 125;
+            dataGridView1.Columns[3].Width = 125;
+            int rowCount = dataGridView1.RowCount;
+            for (int i = 0; i < rowCount; ++i)
+                dataGridView1.Rows[i].Height = 50;
+        }
+
         public void MainScreen_Load(object sender, EventArgs e)
         {
             db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
+            DesignOfDataGridView(dataGridView1);
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
@@ -77,6 +91,7 @@ namespace DBAdmin_v10
 
                 db = new DataClasses1DataContext();
                 dataGridView1.DataSource = db.Users;
+                DesignOfDataGridView(dataGridView1);
             }
             else
             {
@@ -103,16 +118,12 @@ namespace DBAdmin_v10
         {
             db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
+            DesignOfDataGridView(dataGridView1);
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Check;
-        }
-
-        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            buttonChange_Click(this, null);
         }
 
         private void buttonPress(object sender, KeyEventArgs e)
@@ -126,6 +137,11 @@ namespace DBAdmin_v10
             {
                 buttonDelete_Click(this, null);
             }
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            buttonChange_Click(this, null);
         }
     }
 }

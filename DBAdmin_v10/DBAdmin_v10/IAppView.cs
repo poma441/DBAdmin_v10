@@ -8,6 +8,6 @@ namespace DBAdmin_v10
 {
     public interface IAppView
     {
-
+        void DesignOfDataGridView(System.Windows.Forms.DataGridView dataGridView1);
     }
 }

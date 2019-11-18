@@ -33,7 +33,7 @@ namespace DBAdmin_v10
         string pattern0 = @"(?=^.{3,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
         //string pattern = @"(?=^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
         string pattern1 = "^[А-ЯЁ][а-яё]+$";
-        string pattern2 = "^(?=^.{4,}$)[A-Za-z]+$";
+        string pattern2 = @"^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$";
 
         public string LoginText { get { return txtLogin.Text; } set => txtLogin.Text = value; }
         public string PasswordText { get { return txtPassword.Text; } set => txtPassword.Text = value; }
