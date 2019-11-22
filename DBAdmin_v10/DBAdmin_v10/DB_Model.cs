@@ -7,11 +7,11 @@ using System.Security.Cryptography;
 
 namespace DBAdmin_v10
 {
-    public class DB_Model
+    public class DB_Model : IDB_Model
     {
-        public static DataClasses1DataContext db;
+        public DataClasses1DataContext db;
 
-        public static string GetMd5Code(string oldpasswd)
+        public string GetMd5Code(string oldpasswd)
         {
             var md5 = MD5.Create();
 
@@ -23,7 +23,7 @@ namespace DBAdmin_v10
             return oldpasswd;
         }
 
-        public static void DataChange(Users olduser, Users newuser)
+        public void DataChange(Users olduser, Users newuser)
         {
             newuser.login = olduser.login;
             newuser.password = GetMd5Code(olduser.password);
@@ -39,7 +39,7 @@ namespace DBAdmin_v10
             newuser.position = olduser.position;
         }
 
-        public static bool Insert(Users olduser)
+        public bool Insert(Users olduser)
         {
             db = new DataClasses1DataContext();
             Users newuser = new Users();
@@ -59,7 +59,7 @@ namespace DBAdmin_v10
             }
         }
 
-        public static bool Update(Users olduser)
+        public bool Update(Users olduser)
         {
             db = new DataClasses1DataContext();
 
@@ -78,7 +78,7 @@ namespace DBAdmin_v10
             }
         }
 
-        public static bool Delete(List<int> userlist)
+        public bool Delete(List<int> userlist)
         {
             db = new DataClasses1DataContext();
             List<Users> deleteusers = new List<Users>();

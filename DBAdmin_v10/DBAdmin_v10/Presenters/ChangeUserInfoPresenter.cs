@@ -31,7 +31,8 @@ namespace DBAdmin_v10
         public bool ChangeUserInfoInDB()
         {
             Users user = CreateUserFromChangeInfoScreen();
-            return DB_Model.Update(user);
+            IDB_Model model = new DB_Model();
+            return model.Update(user);
         }
     }
 }

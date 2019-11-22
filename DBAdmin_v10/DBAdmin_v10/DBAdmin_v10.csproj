@@ -47,10 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeUsersScreen.cs">
+    <Compile Include="Forms\ChangeUsersScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeUsersScreen.Designer.cs">
+    <Compile Include="Forms\ChangeUsersScreen.Designer.cs">
       <DependentUpon>ChangeUsersScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\ChangeUserInfoPresenter.cs" />
@@ -61,16 +61,16 @@
     </Compile>
     <Compile Include="DB_Model.cs" />
     <Compile Include="Presenters\DeleteUserPresenter.cs" />
-    <Compile Include="MainScreen.cs">
+    <Compile Include="Forms\MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainScreen.Designer.cs">
+    <Compile Include="Forms\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="insertUsersScreen.cs">
+    <Compile Include="Forms\insertUsersScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="insertUsersScreen.Designer.cs">
+    <Compile Include="Forms\insertUsersScreen.Designer.cs">
       <DependentUpon>insertUsersScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="IAppView.cs" />
@@ -81,13 +81,13 @@
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChangeUsersScreen.resx">
+    <EmbeddedResource Include="Forms\ChangeUsersScreen.resx">
       <DependentUpon>ChangeUsersScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainScreen.resx">
+    <EmbeddedResource Include="Forms\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="insertUsersScreen.resx">
+    <EmbeddedResource Include="Forms\insertUsersScreen.resx">
       <DependentUpon>insertUsersScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

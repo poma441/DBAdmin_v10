@@ -16,7 +16,5 @@ namespace DBAdmin_v10
             _appView = appView;
             _dB_Model = dB_Model;
         }
-
-
     }
 }

@@ -10,7 +10,8 @@ namespace DBAdmin_v10
     {
         public bool DeleteUserFromDB(List<int> id)
         {
-            return DB_Model.Delete(id);
+            IDB_Model model = new DB_Model();
+            return model.Delete(id);
         }
     }
 }
