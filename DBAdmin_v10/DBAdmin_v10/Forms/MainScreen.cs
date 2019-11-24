@@ -43,75 +43,6 @@ namespace DBAdmin_v10
             DesignOfDataGridView(dataGridView1);
         }
 
-        private void buttonInsert_Click(object sender, EventArgs e)
-        {
-            insertUsersScreen button1 = new insertUsersScreen(this);
-            button1.ShowDialog();
-        }
-
-        private void buttonChange_Click(object sender, EventArgs e)
-        {
-            ChangeUsersScreen changeInfoScreen = new ChangeUsersScreen(this);
-            changeInfoScreen.txtLogin.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            changeInfoScreen.txtPassword.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            changeInfoScreen.txtSurname.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            changeInfoScreen.txtName.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-
-            if (dataGridView1.CurrentRow.Cells[5].Value != null)
-            {
-                changeInfoScreen.txtPatronymic.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            }
-            else
-            {
-                changeInfoScreen.txtPatronymic.Text = null;
-            }
-
-            changeInfoScreen.txtPosition.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            changeInfoScreen.txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            changeInfoScreen.ShowDialog();
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count != 0)
-            {
-                DialogResult result = MessageBox.Show(
-                    "Вы действительно хотите удалить выбранных пользователей?",
-                    "Внимание!",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    List<int> ids = new List<int>();
-
-                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
-                    {
-                        ids.Add(Convert.ToInt32(row.Cells[0].Value.ToString()));
-                    }
-
-                    DeleteUserPresenter preseneter = new DeleteUserPresenter();
-
-                    if (preseneter.DeleteUserFromDB(ids))
-                    {
-                        MessageBox.Show("Пользователи успешно удалены", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    };
-                }
-
-                db = new DataClasses1DataContext();
-                dataGridView1.DataSource = db.Users;
-                DesignOfDataGridView(dataGridView1);
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Выберите пользователей для удаления",
-                    "Пользоватеь не выбран!",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-        }
-
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             int Check_Width = Check.Width + ((Check.Width * 15) / 100);
@@ -139,18 +70,18 @@ namespace DBAdmin_v10
         {
             if (e.KeyData == Keys.Insert)
             {
-                buttonInsert_Click(this, null);
+                InsertButton_Click(this, null);
             }
 
             if (e.KeyData == Keys.Delete)
             {
-                buttonDelete_Click(this, null);
+                DeleteButton_Click(this, null);
             }
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            buttonChange_Click(this, null);
+            ChangeButton_Click(this, null);
         }
 
         private void MainScreen_MouseUp(object sender, MouseEventArgs e)
@@ -163,23 +94,23 @@ namespace DBAdmin_v10
 
         private void StripMenuInsert_Click(object sender, EventArgs e)
         {
-            buttonInsert_Click(this, null);
+            InsertButton_Click(this, null);
         }
 
         private void StripMenuChange_Click(object sender, EventArgs e)
         {
-            buttonChange_Click(this, null);
+            ChangeButton_Click(this, null);
         }
 
         private void StripMenuDelete_Click(object sender, EventArgs e)
         {
-            buttonDelete_Click(this, null);
+            DeleteButton_Click(this, null);
         }
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            insertUsersScreen button1 = new insertUsersScreen(this);
-            button1.ShowDialog();
+            insertUsersScreen insertUsr = new insertUsersScreen(this);
+            insertUsr.ShowDialog();
         }
 
         private void ChangeButton_Click(object sender, EventArgs e)

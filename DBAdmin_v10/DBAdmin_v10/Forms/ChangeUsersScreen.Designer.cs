@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 1010);
+            this.ClientSize = new System.Drawing.Size(1198, 1010);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.buttonChangeUsrInfo);
             this.Controls.Add(this.lblmsg);
