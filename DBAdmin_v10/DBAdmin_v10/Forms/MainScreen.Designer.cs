@@ -67,6 +67,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1179, 440);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainScreen_MouseUp);
             // 
             // ButtonInsert
             // 
