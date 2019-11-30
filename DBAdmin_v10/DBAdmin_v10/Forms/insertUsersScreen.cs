@@ -30,7 +30,7 @@ namespace DBAdmin_v10
         string pattern0 = @"(?=^.{3,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
         //string pattern = @"(?=^.{10,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$";
         string pattern1 = "^[А-ЯЁ][а-яё]+$";
-        string pattern2 = @"^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$";
+        string pattern2 = @"^[a-zA-Z][a-zA-Z0-9-_\.]{3,20}$";
 
         public string LoginText { get { return txtLogin.Text; } set => txtLogin.Text = value; }
         public string PasswordText { get { return txtPassword.Text; } set => txtPassword.Text = value; }
@@ -41,6 +41,11 @@ namespace DBAdmin_v10
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
+            if(txtPassword.Text.Length == 0 || Regex.IsMatch(txtPassword.Text, pattern0) == false)
+            {
+                lblmsg.ForeColor = Color.FromArgb(78, 184, 206);
+                lblmsg.Text = "Пароль должен содержать минимум одну: \n заглавную букву, цифру и строчную букву \n (длина не менее пяти символов)";
+            }
             if (Regex.IsMatch(txtPassword.Text, pattern0) == false || txtPassword.Text.Length == 0)
             {
                 txtPassword.Focus();
@@ -61,6 +66,7 @@ namespace DBAdmin_v10
                 {
                     errorProvider1.Clear();
 
+
                 }
                 if (txtPassword.Text.Length >= 5 && txtPassword.Text.Length < 9)
                 {
@@ -68,6 +74,7 @@ namespace DBAdmin_v10
                     lblmsg.Text = "Средний пароль ";
 
                 }
+
 
 
                 if (txtPassword.Text.Length >= 9)
@@ -83,10 +90,14 @@ namespace DBAdmin_v10
 
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
+        
             if (Regex.IsMatch(txtLogin.Text, pattern2) == false)
             {
+
                 txtLogin.Focus();
-                errorProvider4.SetError(this.txtLogin, "При создании логина использовать только английский алфавит");
+                lblmsgLogin.ForeColor = Color.FromArgb(78, 184, 206);
+                lblmsgLogin.Text = "При создании логина использовать \n только английский алфавит, цифры  и символы: \n - и _ (длина логина не менее четырех символов) ";
+                errorProvider4.SetError(this.txtLogin, "При создании логина использовать \n только английский алфавит и символы: \n - и _ (длина логина не менее четырех символов) ");
             }
             else
             {
@@ -163,6 +174,152 @@ namespace DBAdmin_v10
             {
                 MessageBox.Show("Не удалось добавить пользователя(логин уже существует)", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             };
+        }
+
+        private void txtLogin_Click(object sender, EventArgs e)
+        {
+            txtLogin.Clear();
+            panelLogin.BackColor = Color.FromArgb(78, 184, 206);
+            txtLogin.ForeColor = Color.FromArgb(78, 184, 206);
+
+            txtPassword.ForeColor = Color.WhiteSmoke;
+            panelPassword.BackColor = Color.WhiteSmoke;
+
+            txtSurname.ForeColor = Color.WhiteSmoke;
+            panelSurname.BackColor = Color.WhiteSmoke;
+
+            txtName.ForeColor = Color.WhiteSmoke;
+            panelName.BackColor = Color.WhiteSmoke;
+
+            txtPatronymic.ForeColor = Color.WhiteSmoke;
+            panelPatronymic.BackColor = Color.WhiteSmoke;
+
+            txtPosition.ForeColor = Color.WhiteSmoke;
+            panelPosition.BackColor = Color.WhiteSmoke;
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Clear();
+            panelPassword.BackColor = Color.FromArgb(78, 184, 206);
+            txtPassword.ForeColor = Color.FromArgb(78, 184, 206);
+
+            txtLogin.ForeColor = Color.WhiteSmoke;
+            panelLogin.BackColor = Color.WhiteSmoke;
+
+            txtSurname.ForeColor = Color.WhiteSmoke;
+            panelSurname.BackColor = Color.WhiteSmoke;
+
+            txtName.ForeColor = Color.WhiteSmoke;
+            panelName.BackColor = Color.WhiteSmoke;
+
+            txtPatronymic.ForeColor = Color.WhiteSmoke;
+            panelPatronymic.BackColor = Color.WhiteSmoke;
+
+            txtPosition.ForeColor = Color.WhiteSmoke;
+            panelPosition.BackColor = Color.WhiteSmoke;
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+
+            txtName.ForeColor = Color.FromArgb(78, 184, 206);
+            panelName.BackColor = Color.FromArgb(78, 184, 206);
+
+            txtPassword.ForeColor = Color.WhiteSmoke;
+            panelPassword.BackColor = Color.WhiteSmoke;
+
+            txtLogin.ForeColor = Color.WhiteSmoke;
+            panelLogin.BackColor = Color.WhiteSmoke;
+
+            txtSurname.ForeColor = Color.WhiteSmoke;
+            panelSurname.BackColor = Color.WhiteSmoke;
+
+            txtPatronymic.ForeColor = Color.WhiteSmoke;
+            panelPatronymic.BackColor = Color.WhiteSmoke;
+
+            txtPosition.ForeColor = Color.WhiteSmoke;
+            panelPosition.BackColor = Color.WhiteSmoke;
+        }
+
+        private void txtPatronymic_Click(object sender, EventArgs e)
+        {
+            txtPatronymic.Clear();
+
+            txtPatronymic.ForeColor = Color.FromArgb(78, 184, 206);
+            panelPatronymic.BackColor = Color.FromArgb(78, 184, 206);
+
+            txtPassword.ForeColor = Color.WhiteSmoke;
+            panelPassword.BackColor = Color.WhiteSmoke;
+
+            txtSurname.ForeColor = Color.WhiteSmoke;
+            panelSurname.BackColor = Color.WhiteSmoke;
+
+            txtName.ForeColor = Color.WhiteSmoke;
+            panelName.BackColor = Color.WhiteSmoke;
+
+            txtPosition.ForeColor = Color.WhiteSmoke;
+            panelPosition.BackColor = Color.WhiteSmoke;
+
+            txtLogin.ForeColor = Color.WhiteSmoke;
+            panelLogin.BackColor = Color.WhiteSmoke;
+        }
+
+        private void txtSurname_Click(object sender, EventArgs e)
+        {
+            txtSurname.Clear();
+
+            txtSurname.ForeColor = Color.FromArgb(78, 184, 206);
+            panelSurname.BackColor = Color.FromArgb(78, 184, 206);
+
+            txtName.ForeColor = Color.WhiteSmoke;
+            panelName.BackColor = Color.WhiteSmoke;
+
+            txtPosition.ForeColor = Color.WhiteSmoke;
+            panelPosition.BackColor = Color.WhiteSmoke;
+
+            txtLogin.ForeColor = Color.WhiteSmoke;
+            panelLogin.BackColor = Color.WhiteSmoke;
+
+            txtPassword.ForeColor = Color.WhiteSmoke;
+            panelPassword.BackColor = Color.WhiteSmoke;
+
+            txtPatronymic.ForeColor = Color.WhiteSmoke;
+            panelPatronymic.BackColor = Color.WhiteSmoke;
+        }
+
+        private void txtPosition_Click(object sender, EventArgs e)
+        {
+            txtPosition.Clear();
+
+            txtPosition.ForeColor = Color.FromArgb(78, 184, 206);
+            panelPosition.BackColor = Color.FromArgb(78, 184, 206);
+
+            txtPassword.ForeColor = Color.WhiteSmoke;
+            panelPassword.BackColor = Color.WhiteSmoke;
+
+            txtSurname.ForeColor = Color.WhiteSmoke;
+            panelSurname.BackColor = Color.WhiteSmoke;
+
+            txtName.ForeColor = Color.WhiteSmoke;
+            panelName.BackColor = Color.WhiteSmoke;
+
+            txtPatronymic.ForeColor = Color.WhiteSmoke;
+            panelPatronymic.BackColor = Color.WhiteSmoke;
+
+            txtLogin.ForeColor = Color.WhiteSmoke;
+            panelLogin.BackColor = Color.WhiteSmoke;
+        }
+
+        private void buttonInsert_MouseMove(object sender, MouseEventArgs e)
+        {
+            buttonInsert.BackColor = Color.FromArgb(78, 184, 206);
+        }
+
+        private void buttonInsert_MouseLeave(object sender, EventArgs e)
+        {
+            buttonInsert.BackColor = Color.FromArgb(78, 184, 206);
         }
 
     }
