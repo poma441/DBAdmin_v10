@@ -14,11 +14,9 @@ namespace DBAdmin_v10
 {
     public partial class MainScreen : Form, IAppView
     {
-        Image Check = Resources.reload;
         public MainScreen()
         {
             InitializeComponent();
-          //  pictureBox1.Image = Check;
         }
 
         DataClasses1DataContext db;
@@ -43,29 +41,6 @@ namespace DBAdmin_v10
             DesignOfDataGridView(dataGridView1);
 
         }
-
-        //private void pictureBox1_MouseHover(object sender, EventArgs e)
-        //{
-        //    int Check_Width = Check.Width + ((Check.Width * 15) / 100);
-        //    int Check_Height = Check.Height + ((Check.Height * 15) / 100);
-
-        //    Bitmap Check_1 = new Bitmap(Check_Width, Check_Height);
-        //    Graphics g = Graphics.FromImage(Check_1);
-        //    g.DrawImage(Check, new Rectangle(Point.Empty, Check_1.Size));
-        //    pictureBox1.Image = Check_1;
-
-        //}
-        //private void pictureBox1_Click(object sender, EventArgs e)
-        //{
-        //    db = new DataClasses1DataContext();
-        //    dataGridView1.DataSource = db.Users;
-        //    DesignOfDataGridView(dataGridView1);
-        //}
-
-        //private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        //{
-        //    pictureBox1.Image = Check;
-        //}
 
         private void buttonPress(object sender, KeyEventArgs e)
         {
