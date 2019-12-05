@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace DBAdmin_v10
 {
-    class ChangeUserInfoPresenter
+    public class ChangeUserInfoPresenter
     {
         IChangeInfoScreen _changeInfoScreen;
+        IDB_Model _model;
 
         public ChangeUserInfoPresenter(IChangeInfoScreen changeInfoScreen)
         {
             _changeInfoScreen = changeInfoScreen;
+            _model = new DB_Model();
+        }
+
+        public ChangeUserInfoPresenter(IChangeInfoScreen changeInfoScreen, IDB_Model model)
+        {
+            _changeInfoScreen = changeInfoScreen;
+            _model = model;
         }
 
         public Users CreateUserFromChangeInfoScreen()
@@ -31,8 +39,7 @@ namespace DBAdmin_v10
         public bool ChangeUserInfoInDB()
         {
             Users user = CreateUserFromChangeInfoScreen();
-            IDB_Model model = new DB_Model();
-            return model.Update(user);
+            return _model.Update(user);
         }
     }
 }

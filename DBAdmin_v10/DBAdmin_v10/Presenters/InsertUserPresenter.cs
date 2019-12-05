@@ -9,10 +9,18 @@ namespace DBAdmin_v10
     public class InsertUserPresenter
     {
         IInsertScreen _insertScreen;
+        IDB_Model _model;
 
         public InsertUserPresenter(IInsertScreen insertScreen)
         {
             _insertScreen = insertScreen;
+            _model = new DB_Model();
+        }
+
+        public InsertUserPresenter(IInsertScreen insertScreen, IDB_Model model)
+        {
+            _insertScreen = insertScreen;
+            _model = model;
         }
 
         public Users CreateUserFromInsertScreen()
@@ -30,8 +38,7 @@ namespace DBAdmin_v10
         public bool InsertUserToDB()
         {
             Users user = CreateUserFromInsertScreen();
-            IDB_Model model = new DB_Model();
-            return model.Insert(user);
+            return _model.Insert(user);
         }
     }
 }
