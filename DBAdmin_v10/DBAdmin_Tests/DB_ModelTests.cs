@@ -18,25 +18,25 @@ namespace DBAdmin_Tests
         [TestInitialize]
         public void SetUp()
         {
-            model = new DBAdmin_v10.DB_Model();
-            user = new DBAdmin_v10.Users();
-            userforupdate = new DBAdmin_v10.Users();
-            db = new DBAdmin_v10.DataClasses1DataContext();
-            idlist = new List<int>();
+            model                    = new DBAdmin_v10.DB_Model();
+            user                     = new DBAdmin_v10.Users();
+            userforupdate            = new DBAdmin_v10.Users();
+            db                       = new DBAdmin_v10.DataClasses1DataContext();
+            idlist                   = new List<int>();
 
-            user.login = "ivanov123";
-            user.password = "12345678";
-            user.surname = "Ivanov";
-            user.name = "Ivan";
-            user.patronymic = "Ivanovich";
-            user.position = "Manager";
+            user.login               = "ivanov123";
+            user.password            = "12345678";
+            user.surname             = "Ivanov";
+            user.name                = "Ivan";
+            user.patronymic          = "Ivanovich";
+            user.position            = "Manager";
 
-            userforupdate.login = "petrov123";
-            userforupdate.password = "12345678abcdef";
-            userforupdate.surname = "Petrov";
-            userforupdate.name = "Petr";
+            userforupdate.login      = "petrov123";
+            userforupdate.password   = "12345678abcdef";
+            userforupdate.surname    = "Petrov";
+            userforupdate.name       = "Petr";
             userforupdate.patronymic = "Petrovich";
-            userforupdate.position = "Boss";
+            userforupdate.position   = "Boss";
         }
 
         [TestMethod]
@@ -68,9 +68,9 @@ namespace DBAdmin_Tests
 
             var newuser = db.Users.Where(w => w.login == user.login).FirstOrDefault();
 
-            newuser.login = "testlogin1";
-            newuser.surname = "Petrov";
-            newuser.name = "Petr";
+            newuser.login    = "testlogin1";
+            newuser.surname  = "Petrov";
+            newuser.name     = "Petr";
             newuser.position = "Cleaner";
 
             Assert.IsTrue(model.Update(newuser));
@@ -88,9 +88,9 @@ namespace DBAdmin_Tests
             var newuser = db.Users.Where(w => w.login == user.login).FirstOrDefault();
             var newuserforupdate = db.Users.Where(w => w.login == userforupdate.login).FirstOrDefault();
 
-            newuserforupdate.login = user.login;
-            newuserforupdate.surname = "Sidorov";
-            newuserforupdate.name = "Sidor";
+            newuserforupdate.login    = user.login;
+            newuserforupdate.surname  = "Sidorov";
+            newuserforupdate.name     = "Sidor";
             newuserforupdate.position = "Student";
 
             Assert.IsFalse(model.Update(newuserforupdate));
