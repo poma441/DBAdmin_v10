@@ -25,7 +25,7 @@ namespace DBAdmin_Tests
         }
 
         [TestMethod]
-        public void Test_InsertUserPresenterGetUser()
+        public void Test_InsertUserPresenterGetUserLogin()
         {
             var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
             var mock_Screen = new Mock<DBAdmin_v10.IInsertScreen>();
@@ -34,9 +34,53 @@ namespace DBAdmin_Tests
             presenter.CreateUserFromInsertScreen();
 
             mock_Screen.Verify(pr => pr.LoginText);
+        }
+
+        [TestMethod]
+        public void Test_InsertUserPresenterGetUserName()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IInsertScreen>();
+            var presenter = new DBAdmin_v10.InsertUserPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromInsertScreen();
+
             mock_Screen.Verify(pr => pr.NameText);
+        }
+
+        [TestMethod]
+        public void Test_InsertUserPresenterGetUserPatro()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IInsertScreen>();
+            var presenter = new DBAdmin_v10.InsertUserPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromInsertScreen();
+
             mock_Screen.Verify(pr => pr.PatronymicText);
+        }
+
+        [TestMethod]
+        public void Test_InsertUserPresenterGetUserPos()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IInsertScreen>();
+            var presenter = new DBAdmin_v10.InsertUserPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromInsertScreen();
+
             mock_Screen.Verify(pr => pr.PositionText);
+        }
+
+        [TestMethod]
+        public void Test_InsertUserPresenterGetUserSurname()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IInsertScreen>();
+            var presenter = new DBAdmin_v10.InsertUserPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromInsertScreen();
+
             mock_Screen.Verify(pr => pr.SurnameText);
         }
     }
@@ -74,7 +118,7 @@ namespace DBAdmin_Tests
         }
 
         [TestMethod]
-        public void Test_ChangeUserPresenterGetUser()
+        public void Test_ChangeUserPresenterGetUserLogin()
         {
             var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
             var mock_Screen = new Mock<DBAdmin_v10.IChangeInfoScreen>();
@@ -83,9 +127,53 @@ namespace DBAdmin_Tests
             presenter.CreateUserFromChangeInfoScreen();
 
             mock_Screen.Verify(pr => pr.LoginText);
+        }
+
+        [TestMethod]
+        public void Test_ChangeUserPresenterGetUserName()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IChangeInfoScreen>();
+            var presenter = new DBAdmin_v10.ChangeUserInfoPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromChangeInfoScreen();
+
             mock_Screen.Verify(pr => pr.NameText);
+        }
+
+        [TestMethod]
+        public void Test_ChangeUserPresenterGetUserPatro()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IChangeInfoScreen>();
+            var presenter = new DBAdmin_v10.ChangeUserInfoPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromChangeInfoScreen();
+
             mock_Screen.Verify(pr => pr.PatronymicText);
+        }
+
+        [TestMethod]
+        public void Test_ChangeUserPresenterGetUserPos()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IChangeInfoScreen>();
+            var presenter = new DBAdmin_v10.ChangeUserInfoPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromChangeInfoScreen();
+;
             mock_Screen.Verify(pr => pr.PositionText);
+        }
+
+        [TestMethod]
+        public void Test_ChangeUserPresenterGetUserSurname()
+        {
+            var mock_DB = new Mock<DBAdmin_v10.IDB_Model>();
+            var mock_Screen = new Mock<DBAdmin_v10.IChangeInfoScreen>();
+            var presenter = new DBAdmin_v10.ChangeUserInfoPresenter(mock_Screen.Object, mock_DB.Object);
+
+            presenter.CreateUserFromChangeInfoScreen();
+
             mock_Screen.Verify(pr => pr.SurnameText);
         }
     }
