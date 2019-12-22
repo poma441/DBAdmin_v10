@@ -84,7 +84,6 @@
     <Compile Include="IDB_Model.cs" />
     <Compile Include="IViews\IInsertScreen.cs" />
     <Compile Include="Presenters\InsertUserPresenter.cs" />
-    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\ChangeUsersScreen.resx">

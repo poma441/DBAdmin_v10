@@ -18,7 +18,7 @@ namespace DBAdmin_v10
             for (int i = 0; i < 1000; ++i)
             {
                 oldpasswd = Convert.ToBase64String(md5.ComputeHash(Encoding.UTF8.GetBytes(oldpasswd)));
-            }
+            }       
 
             return oldpasswd;
         }
