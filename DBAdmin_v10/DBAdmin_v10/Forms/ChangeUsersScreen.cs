@@ -192,7 +192,7 @@ namespace DBAdmin_v10
             }
             else
             {
-                ChangeUserInfoPresenter changeUserPresenter = new ChangeUserInfoPresenter(this);
+                ChangeUserInfoPresenter changeUserPresenter = new ChangeUserInfoPresenter(this, new DB_Model());
                 if (changeUserPresenter.ChangeUserInfoInDB())
                 {
                     MessageBox.Show("Информация о пользователе успешно изменена!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);

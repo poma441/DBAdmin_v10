@@ -189,7 +189,7 @@ namespace DBAdmin_v10
             }
             else
             {
-                InsertUserPresenter insertUserPresenter = new InsertUserPresenter(this);
+                InsertUserPresenter insertUserPresenter = new InsertUserPresenter(this, new DB_Model());
 
                 if (insertUserPresenter.InsertUserToDB())
                 {

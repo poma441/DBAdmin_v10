@@ -11,12 +11,6 @@ namespace DBAdmin_v10
         IInsertScreen _insertScreen;
         IDB_Model _model;
 
-        public InsertUserPresenter(IInsertScreen insertScreen)
-        {
-            _insertScreen = insertScreen;
-            _model = new DB_Model();
-        }
-
         public InsertUserPresenter(IInsertScreen insertScreen, IDB_Model model)
         {
             _insertScreen = insertScreen;

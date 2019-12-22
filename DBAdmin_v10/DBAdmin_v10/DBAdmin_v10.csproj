@@ -73,11 +73,11 @@
     <Compile Include="Forms\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\insertUsersScreen.cs">
+    <Compile Include="Forms\InsertUsersScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\insertUsersScreen.Designer.cs">
-      <DependentUpon>insertUsersScreen.cs</DependentUpon>
+    <Compile Include="Forms\InsertUsersScreen.Designer.cs">
+      <DependentUpon>InsertUsersScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="IAppView.cs" />
     <Compile Include="IViews\IChangeInfoScreen.cs" />
@@ -92,8 +92,8 @@
     <EmbeddedResource Include="Forms\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\insertUsersScreen.resx">
-      <DependentUpon>insertUsersScreen.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InsertUsersScreen.resx">
+      <DependentUpon>InsertUsersScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -117,7 +117,7 @@ namespace DBAdmin_v10
                         ids.Add(Convert.ToInt32(row.Cells[0].Value.ToString()));
                     }
 
-                    DeleteUserPresenter preseneter = new DeleteUserPresenter();
+                    DeleteUserPresenter preseneter = new DeleteUserPresenter(new DB_Model());
 
                     if (preseneter.DeleteUserFromDB(ids))
                     {

@@ -11,12 +11,6 @@ namespace DBAdmin_v10
         IChangeInfoScreen _changeInfoScreen;
         IDB_Model _model;
 
-        public ChangeUserInfoPresenter(IChangeInfoScreen changeInfoScreen)
-        {
-            _changeInfoScreen = changeInfoScreen;
-            _model = new DB_Model();
-        }
-
         public ChangeUserInfoPresenter(IChangeInfoScreen changeInfoScreen, IDB_Model model)
         {
             _changeInfoScreen = changeInfoScreen;

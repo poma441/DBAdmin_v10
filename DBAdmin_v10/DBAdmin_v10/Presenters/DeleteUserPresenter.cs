@@ -15,11 +15,6 @@ namespace DBAdmin_v10
             _model = model;
         }
 
-        public DeleteUserPresenter()
-        {
-            _model = new DB_Model();
-        }
-
         public bool DeleteUserFromDB(List<int> id)
         {
             IDB_Model model = new DB_Model();
