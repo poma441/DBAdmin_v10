@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DBAdmin_v10
 {
-    public partial class MainScreen : Form, IAppView
+    public partial class MainScreen : Form
     {
         public MainScreen()
         {
@@ -21,25 +21,11 @@ namespace DBAdmin_v10
 
         DataClasses1DataContext db;
 
-        public void DesignOfDataGridView(System.Windows.Forms.DataGridView dataGridView1)
-        {
-            dataGridView1.Columns[2].Width = 235;
-            dataGridView1.Columns[1].Width = 250;
-            dataGridView1.Columns[7].Width = 200;
-            dataGridView1.Columns[5].Width = 125;
-            dataGridView1.Columns[4].Width = 125;
-            dataGridView1.Columns[3].Width = 125;
-            int rowCount = dataGridView1.RowCount;
-            for (int i = 0; i < rowCount; ++i)
-                dataGridView1.Rows[i].Height = 50;
-        }
 
         public void MainScreen_Load(object sender, EventArgs e)
         {
             db = new DataClasses1DataContext();
             dataGridView1.DataSource = db.Users;
-            DesignOfDataGridView(dataGridView1);
-
         }
 
         private void buttonPress(object sender, KeyEventArgs e)
@@ -141,7 +127,6 @@ namespace DBAdmin_v10
 
                 db = new DataClasses1DataContext();
                 dataGridView1.DataSource = db.Users;
-                DesignOfDataGridView(dataGridView1);
             }
             else
             {

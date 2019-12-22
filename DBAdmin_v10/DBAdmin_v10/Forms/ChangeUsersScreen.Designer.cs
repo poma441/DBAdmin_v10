@@ -35,14 +35,14 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPatronymic = new System.Windows.Forms.TextBox();
             this.txtPosition = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPassword = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderSurname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPatronymic = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPosition = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblmsg = new System.Windows.Forms.Label();
             this.buttonChangeUsrInfo = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -65,14 +65,14 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSurname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPatronymic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLogin
@@ -85,9 +85,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(252, 28);
             this.txtLogin.TabIndex = 17;
-            this.txtLogin.Click += new System.EventHandler(this.txtLogin_Click);
             this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
-            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
             // txtPassword
             // 
@@ -99,9 +97,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(252, 28);
             this.txtPassword.TabIndex = 18;
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // txtSurname
             // 
@@ -113,9 +109,7 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(252, 28);
             this.txtSurname.TabIndex = 19;
-            this.txtSurname.Click += new System.EventHandler(this.txtSurname_Click);
             this.txtSurname.TextChanged += new System.EventHandler(this.txtSurname_TextChanged);
-            this.txtSurname.Enter += new System.EventHandler(this.txtSurname_Enter);
             // 
             // txtName
             // 
@@ -127,9 +121,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(252, 28);
             this.txtName.TabIndex = 20;
-            this.txtName.Click += new System.EventHandler(this.txtName_Click);
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
             // 
             // txtPatronymic
             // 
@@ -141,9 +133,7 @@
             this.txtPatronymic.Name = "txtPatronymic";
             this.txtPatronymic.Size = new System.Drawing.Size(252, 28);
             this.txtPatronymic.TabIndex = 21;
-            this.txtPatronymic.Click += new System.EventHandler(this.txtPatronymic_Click);
             this.txtPatronymic.TextChanged += new System.EventHandler(this.txtPatronymic_TextChanged);
-            this.txtPatronymic.Enter += new System.EventHandler(this.txtPatronymic_Enter);
             this.txtPatronymic.Leave += new System.EventHandler(this.txtPatronymic_TextChanged);
             // 
             // txtPosition
@@ -156,14 +146,12 @@
             this.txtPosition.Name = "txtPosition";
             this.txtPosition.Size = new System.Drawing.Size(252, 28);
             this.txtPosition.TabIndex = 22;
-            this.txtPosition.Click += new System.EventHandler(this.txtPosition_Click);
             this.txtPosition.TextChanged += new System.EventHandler(this.txtPosition_TextChanged);
-            this.txtPosition.Enter += new System.EventHandler(this.txtPosition_Enter);
             this.txtPosition.Leave += new System.EventHandler(this.txtPosition_TextChanged);
             // 
-            // errorProvider1
+            // errorProviderPassword
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderPassword.ContainerControl = this;
             // 
             // errorProvider2
             // 
@@ -173,25 +161,25 @@
             // 
             this.errorProvider3.ContainerControl = this;
             // 
-            // errorProvider4
+            // errorProviderLogin
             // 
-            this.errorProvider4.ContainerControl = this;
+            this.errorProviderLogin.ContainerControl = this;
             // 
-            // errorProvider5
+            // errorProviderName
             // 
-            this.errorProvider5.ContainerControl = this;
+            this.errorProviderName.ContainerControl = this;
             // 
-            // errorProvider6
+            // errorProviderSurname
             // 
-            this.errorProvider6.ContainerControl = this;
+            this.errorProviderSurname.ContainerControl = this;
             // 
-            // errorProvider7
+            // errorProviderPatronymic
             // 
-            this.errorProvider7.ContainerControl = this;
+            this.errorProviderPatronymic.ContainerControl = this;
             // 
-            // errorProvider8
+            // errorProviderPosition
             // 
-            this.errorProvider8.ContainerControl = this;
+            this.errorProviderPosition.ContainerControl = this;
             // 
             // lblmsg
             // 
@@ -451,14 +439,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeUsersScreen";
             this.Load += new System.EventHandler(this.ChangeUsersScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSurname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPatronymic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPosition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,14 +459,14 @@
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.TextBox txtPatronymic;
         public System.Windows.Forms.TextBox txtPosition;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderPassword;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.ErrorProvider errorProvider4;
-        private System.Windows.Forms.ErrorProvider errorProvider5;
-        private System.Windows.Forms.ErrorProvider errorProvider6;
-        private System.Windows.Forms.ErrorProvider errorProvider7;
-        private System.Windows.Forms.ErrorProvider errorProvider8;
+        private System.Windows.Forms.ErrorProvider errorProviderLogin;
+        private System.Windows.Forms.ErrorProvider errorProviderName;
+        private System.Windows.Forms.ErrorProvider errorProviderSurname;
+        private System.Windows.Forms.ErrorProvider errorProviderPatronymic;
+        private System.Windows.Forms.ErrorProvider errorProviderPosition;
         private System.Windows.Forms.Label lblmsg;
         private System.Windows.Forms.Button buttonChangeUsrInfo;
         public System.Windows.Forms.TextBox txtID;
